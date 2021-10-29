@@ -1,0 +1,56 @@
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+import "./Header.css";
+import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+
+const Header = () => {
+  const { user, signOutGoogle } = useAuth();
+  const handleLogOut = () => {
+    signOutGoogle();
+  };
+  return (
+    <div>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand
+            className="d-flex justify-content-center align-items-center"
+            href="#home"
+          >
+            <FontAwesomeIcon icon={faPlaneDeparture} />
+            <h4 className="ms-3">
+              Lets<span className="text-danger">Travel</span>
+            </h4>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/home">
+                Home
+              </Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+            <Nav>
+              {!user ? (
+                <Nav.Link as={Link} to="/login" href="#deets">
+                  Login
+                </Nav.Link>
+              ) : (
+                <div className="d-flex align-items-center">
+                  <span className="text-primary">{user.displayName}</span>
+                  <Nav.Link eventKey={2} onClick={handleLogOut}>
+                    Logout
+                  </Nav.Link>
+                </div>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+};
+
+export default Header;
