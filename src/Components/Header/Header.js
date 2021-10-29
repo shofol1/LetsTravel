@@ -39,13 +39,13 @@ const Header = () => {
               ) : (
                 <div className="d-flex align-items-center">
                   <Nav.Link as={Link} to="/myBookings">
-                    My Bookings
+                    MyBookings
                   </Nav.Link>
                   <Nav.Link as={Link} to="/manageBookings">
-                    Manage All Bookings
+                    ManageBookings
                   </Nav.Link>
                   <Nav.Link as={Link} to="/addService">
-                    Add New Service
+                    AddService
                   </Nav.Link>
                   <span className="text-primary">{user.displayName}</span>
                   <Nav.Link eventKey={2} onClick={handleLogOut}>

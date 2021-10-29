@@ -26,7 +26,7 @@ const Offers = () => {
             style={{ height: "200px" }}
           >
             <h3>{offer.price}</h3>
-            <Link to="/offer">
+            <Link to={`/offer/${offer._id}`}>
               {" "}
               <button className="btn btn-primary">Book Now</button>
             </Link>

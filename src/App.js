@@ -9,6 +9,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import MyBookins from "./Components/MyBookings/MyBookins";
 import ManageAllBookings from "./Components/ManageAllBookings/ManageAllBookings";
 import AddNewService from "./Components/AddNewService/AddNewService";
+import Footer from "./Footer/Footer";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <PrivateRoute exact path="/offer">
+            <PrivateRoute exact path="/offer/:id">
               <Offer></Offer>
             </PrivateRoute>
             <PrivateRoute exact path="/myBookings">
@@ -39,6 +40,7 @@ function App() {
               <AddNewService></AddNewService>
             </PrivateRoute>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
