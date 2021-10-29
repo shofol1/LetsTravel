@@ -8,11 +8,10 @@ import useAuth from "../../Hooks/useAuth";
 import { useLocation, useHistory } from "react-router";
 
 const Login = () => {
-  const { user, googleSignIn, setUser } = useAuth();
+  const { user, googleSignIn, setUser, setIsLoading, isLoading } = useAuth();
   const location = useLocation();
   const history = useHistory();
   const redirect_url = location.state?.from || "/home";
-  console.log("came from", location.state?.from);
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
@@ -20,9 +19,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      .finally(() => setIsLoading(false));
   };
   return (
     <div className="container mt-5">

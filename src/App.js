@@ -6,6 +6,9 @@ import Header from "./Components/Header/Header";
 import AuthProvider from "./Contexts/AuthProvider";
 import Offer from "./Components/Offer/Offer";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import MyBookins from "./Components/MyBookings/MyBookins";
+import ManageAllBookings from "./Components/ManageAllBookings/ManageAllBookings";
+import AddNewService from "./Components/AddNewService/AddNewService";
 
 function App() {
   return (
@@ -25,6 +28,15 @@ function App() {
             </Route>
             <PrivateRoute exact path="/offer">
               <Offer></Offer>
+            </PrivateRoute>
+            <PrivateRoute exact path="/myBookings">
+              <MyBookins></MyBookins>
+            </PrivateRoute>
+            <PrivateRoute exact path="/manageBookings">
+              <ManageAllBookings></ManageAllBookings>
+            </PrivateRoute>
+            <PrivateRoute exact path="/addService">
+              <AddNewService></AddNewService>
             </PrivateRoute>
           </Switch>
         </Router>

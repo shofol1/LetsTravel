@@ -30,7 +30,6 @@ const Header = () => {
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
             </Nav>
             <Nav>
               {!user ? (
@@ -39,6 +38,15 @@ const Header = () => {
                 </Nav.Link>
               ) : (
                 <div className="d-flex align-items-center">
+                  <Nav.Link as={Link} to="/myBookings">
+                    My Bookings
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/manageBookings">
+                    Manage All Bookings
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/addService">
+                    Add New Service
+                  </Nav.Link>
                   <span className="text-primary">{user.displayName}</span>
                   <Nav.Link eventKey={2} onClick={handleLogOut}>
                     Logout

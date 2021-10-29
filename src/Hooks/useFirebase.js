@@ -13,25 +13,31 @@ const auth = getAuth();
 
 const useFirbase = () => {
   const [user, setUser] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const googleSignIn = () => {
+    setIsLoading(true);
     const GoogleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, GoogleProvider);
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       } else {
         setUser("");
       }
+      setIsLoading(false);
     });
+    return () => unsubscribed;
   }, []);
 
   const signOutGoogle = () => {
     const auth = getAuth();
     signOut(auth)
-      .then(() => {})
+      .then(() => {
+        setIsLoading(false);
+      })
       .catch((error) => {});
   };
   return {
@@ -39,6 +45,8 @@ const useFirbase = () => {
     user,
     signOutGoogle,
     setUser,
+    setIsLoading,
+    isLoading,
   };
 };
 
