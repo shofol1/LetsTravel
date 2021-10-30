@@ -1,3 +1,11 @@
+.heroSection {
+  width: 100%;
+  height: 500px;
+  background-image: url("../../Utilities/Sliders/slider.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .drk:after {
   content: "";
   display: block;
@@ -13,7 +21,7 @@
   z-index: 100;
 }
 .bgDark {
-  background: rgba(0, 0, 0, 0.6);
+  font-style: oblique;
   height: 100px;
 }
 @media only screen and (min-width: 990px) {

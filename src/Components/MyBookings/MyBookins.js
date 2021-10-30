@@ -53,6 +53,7 @@ const MyBookins = () => {
               <th>Name</th>
               <th>Phone</th>
               <th>Members Number</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -63,6 +64,7 @@ const MyBookins = () => {
                 <td>{booking.name}</td>
                 <td>{booking.contact}</td>
                 <td>{booking.member}</td>
+                <td>{booking.status}</td>
                 <td>
                   <button
                     className="btn btn-danger"

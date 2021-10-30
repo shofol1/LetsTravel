@@ -12,7 +12,7 @@ const Offers = () => {
   return (
     <div className="mt-5 container">
       {offers.map((offer) => (
-        <Row className="border border-2 p-4 mb-2">
+        <Row key={offer._id} className="border border-2 p-4 mb-2">
           <Col md={4}>
             <img className="w-75 mb-4 rounded" src={offer.picture} alt="" />
           </Col>

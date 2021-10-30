@@ -17,6 +17,7 @@ const Offer = () => {
   const memberRef = useRef();
   const serviceIdRef = useRef();
   const emailRef = useRef();
+  const [status, setStatus] = useState("pendeing");
   const notify = () => toast.success("Your booking is confirmed!");
   const {
     reset,
@@ -43,6 +44,7 @@ const Offer = () => {
       address: address,
       member: member,
       email: email,
+      status: status,
     };
     fetch("http://localhost:5000/orders", {
       method: "POST",

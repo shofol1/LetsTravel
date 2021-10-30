@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ManageAllBookings = () => {
   const [allService, setAllService] = useState([]);
   const notify = () => toast.warn("Your booking is deleted!");
+  const approved = () => toast.warn("Your booking is approved!");
   useEffect(() => {
     fetch("http://localhost:5000/myOrders")
       .then((res) => res.json())
@@ -29,6 +30,22 @@ const ManageAllBookings = () => {
         }
       });
   };
+  const handlePending = (id) => {
+    fetch(`http://localhost:5000/updateStatus/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(allService),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          approved();
+        }
+      });
+  };
+
   return (
     <div style={{ height: "100vh" }}>
       <div>
@@ -44,8 +61,9 @@ const ManageAllBookings = () => {
               <th>Service_id</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Members Number</th>
+              <th>Members</th>
               <th>Address</th>
+              <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -57,12 +75,19 @@ const ManageAllBookings = () => {
                 <td>{service.email}</td>
                 <td>{service.member}</td>
                 <td>{service.address}</td>
+                <td>{service.status}</td>
                 <td>
                   <button
                     className="btn btn-danger"
                     onClick={() => handleAllDelete(service._id)}
                   >
-                    Delete booking
+                    Delete
+                  </button>
+                  <button
+                    className="btn btn-success ms-1"
+                    onClick={() => handlePending(service._id)}
+                  >
+                    approve
                   </button>
                 </td>
               </tr>
