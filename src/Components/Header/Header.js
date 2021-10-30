@@ -42,10 +42,10 @@ const Header = () => {
                     MyBookings
                   </Nav.Link>
                   <Nav.Link as={Link} to="/manageBookings">
-                    ManageBookings
+                    ManageAllBookings
                   </Nav.Link>
                   <Nav.Link as={Link} to="/addService">
-                    AddService
+                    AddNewService
                   </Nav.Link>
                   <span className="text-primary">{user.displayName}</span>
                   <Nav.Link eventKey={2} onClick={handleLogOut}>
