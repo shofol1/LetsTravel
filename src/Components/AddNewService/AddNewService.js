@@ -14,11 +14,9 @@ const AddNewService = () => {
   const pictureRef = useRef();
   const phoneRef = useRef();
   const aboutRef = useRef();
-  const notifyNewUser = () => toast.success("new Service Added!");
-  const notify = () => toast.success("Your booking is confirmed!");
-  const { reset } = useForm();
+  const notify = () => toast.success("new Service Added!");
+  const { reset, register, handleSubmit } = useForm();
   const handleAddForm = (e) => {
-    reset();
     const name = nameRef.current.value;
     const email = emailRef.current.value;
     const phone = phoneRef.current.value;
@@ -43,11 +41,7 @@ const AddNewService = () => {
       body: JSON.stringify(newServiceInfo),
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          notifyNewUser();
-        }
-      });
+      .then((data) => {});
     e.preventDefault();
   };
   return (
@@ -109,6 +103,7 @@ const AddNewService = () => {
                 className="btn btn-primary"
                 type="submit"
                 value="ADD USER"
+                onClick={() => reset()}
               />
             </form>
           </Col>

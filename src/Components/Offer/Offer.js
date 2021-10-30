@@ -96,7 +96,7 @@ const Offer = () => {
           </Col>
           <Col md={6}>
             <h2 className="text-center text-secondary">Place Booking</h2>
-            <form className="w-75 mx-auto" onSubmit={handleBooking}>
+            <form className="w-75 mx-auto">
               <input
                 ref={serviceIdRef}
                 className="w-100 mt-3 mb-3"
@@ -137,6 +137,7 @@ const Offer = () => {
                 className="btn btn-primary"
                 type="submit"
                 value="Confirm Booking"
+                onClick={handleBooking}
               />
             </form>
           </Col>

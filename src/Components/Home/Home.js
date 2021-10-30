@@ -2,14 +2,16 @@ import React from "react";
 import HowItWork from "../../HowITWork/HowItWork";
 import Header from "../Header/Header";
 import Offers from "../Offers/Offers";
-import Slider from "../Slider/Slider";
+import PartnerSlider from "../PartnerSlider/PartnerSlider";
+import HeroSection from "../HeroSection/HeroSection";
 
 const Home = () => {
   return (
     <div>
-      <Slider></Slider>
+      <HeroSection></HeroSection>
       <Offers></Offers>
       <HowItWork></HowItWork>
+      <PartnerSlider></PartnerSlider>
     </div>
   );
 };
