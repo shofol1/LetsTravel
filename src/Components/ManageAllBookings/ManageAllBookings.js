@@ -48,7 +48,7 @@ const ManageAllBookings = () => {
   };
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div className="mb-5">
       <div>
         <ToastContainer />
       </div>

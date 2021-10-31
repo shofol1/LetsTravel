@@ -38,7 +38,7 @@ const MyBookins = () => {
       });
   };
   return (
-    <div style={{ height: "100vh" }}>
+    <div className="mb-5" style={{ height: "100vh" }}>
       <div>
         <ToastContainer />
       </div>

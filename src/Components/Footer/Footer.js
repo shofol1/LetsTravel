@@ -8,7 +8,7 @@ const Footer = () => {
   var today = new Date();
   var date = today.getFullYear();
   return (
-    <div className="bg-dark text-white p-2">
+    <div className="bg-dark text-white p-2 mt-5">
       <Container className="pt-2 d-flex justify-content-between">
         <p className="textRes">
           ©<span className="text-secondary">LetsTravel</span> , All rights
