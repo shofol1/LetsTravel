@@ -9,7 +9,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import MyBookins from "./Components/MyBookings/MyBookins";
 import ManageAllBookings from "./Components/ManageAllBookings/ManageAllBookings";
 import AddNewService from "./Components/AddNewService/AddNewService";
-import Footer from "./Footer/Footer";
+import Footer from "./Components/Footer/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
