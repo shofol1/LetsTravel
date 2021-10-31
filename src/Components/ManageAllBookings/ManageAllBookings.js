@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../ManageAllBookings/MangageAllBookings.css";
 
 const ManageAllBookings = () => {
   const [allService, setAllService] = useState([]);
@@ -76,19 +77,25 @@ const ManageAllBookings = () => {
                 <td>{service.member}</td>
                 <td>{service.address}</td>
                 <td>{service.status}</td>
-                <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleAllDelete(service._id)}
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="btn btn-success ms-1"
-                    onClick={() => handlePending(service._id)}
-                  >
-                    approve
-                  </button>
+                <td className="text-center">
+                  <Row>
+                    <Col md={4}>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleAllDelete(service._id)}
+                      >
+                        Delete
+                      </button>
+                    </Col>
+                    <Col md={8}>
+                      <button
+                        className="btn btn-success ms-1"
+                        onClick={() => handlePending(service._id)}
+                      >
+                        approve
+                      </button>
+                    </Col>
+                  </Row>
                 </td>
               </tr>
             ))}

@@ -11,18 +11,12 @@ const Home = () => {
   const { user } = useAuth();
   return (
     <div>
-      {!user ? (
-        <div className="text-center mt-5">
-          <Spinner className="" animation="grow" variant="primary" />
-        </div>
-      ) : (
-        <div>
-          <HeroSection></HeroSection>
-          <Offers></Offers>
-          <HowItWork></HowItWork>
-          <PartnerSlider></PartnerSlider>
-        </div>
-      )}
+      <div>
+        <HeroSection></HeroSection>
+        <Offers></Offers>
+        <HowItWork></HowItWork>
+        <PartnerSlider></PartnerSlider>
+      </div>
     </div>
   );
 };

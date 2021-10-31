@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import "../MyBookings/MyBookings.css";
 const MyBookins = () => {
   const { user } = useAuth();
   const [allbooking, setAllbooking] = useState([]);
@@ -67,7 +67,7 @@ const MyBookins = () => {
                 <td>{booking.status}</td>
                 <td>
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-danger btn"
                     onClick={() => handleDelete(booking._id)}
                   >
                     Cancel booking

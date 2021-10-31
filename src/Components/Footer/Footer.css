@@ -1,0 +1,8 @@
+@media screen and (max-width: 480px) {
+  .textHide {
+    display: none;
+  }
+  .textRes {
+    font-size: 14px;
+  }
+}

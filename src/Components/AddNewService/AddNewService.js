@@ -15,7 +15,7 @@ const AddNewService = () => {
   const phoneRef = useRef();
   const aboutRef = useRef();
   const notify = () => toast.success("new Service Added!");
-  const { reset, register, handleSubmit } = useForm();
+  const { reset } = useForm();
   const handleAddForm = (e) => {
     const name = nameRef.current.value;
     const email = emailRef.current.value;
@@ -41,7 +41,12 @@ const AddNewService = () => {
       body: JSON.stringify(newServiceInfo),
     })
       .then((res) => res.json())
-      .then((data) => {});
+      .then((data) => {
+        if (data.insertedId) {
+          notify();
+          reset();
+        }
+      });
     e.preventDefault();
   };
   return (

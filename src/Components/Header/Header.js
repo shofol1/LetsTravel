@@ -5,6 +5,7 @@ import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import "../Header/Header.css";
 
 const Header = () => {
   const { user, signOutGoogle } = useAuth();
@@ -15,29 +16,24 @@ const Header = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand
-            className="d-flex justify-content-center align-items-center"
-            href="#home"
-          >
+          <Navbar.Brand className="d-flex justify-content-center align-items-center">
             <FontAwesomeIcon icon={faPlaneDeparture} />
             <h4 className="ms-3">
               Lets<span className="text-danger">Travel</span>
             </h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse id="responsive-navbar-nav ">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/home">
                 Home
               </Nav.Link>
-            </Nav>
-            <Nav>
               {!user ? (
                 <Nav.Link as={Link} to="/login" href="#deets">
                   Login
                 </Nav.Link>
               ) : (
-                <div className="d-flex align-items-center">
+                <div className="flexOffRes">
                   <Nav.Link as={Link} to="/myBookings">
                     MyBookings
                   </Nav.Link>

@@ -5,6 +5,7 @@ import img1 from "../../Utilities/sponsors/iata-logo-01.png";
 import img2 from "../../Utilities/sponsors/lab-gov-city-01.png";
 import img3 from "../../Utilities/sponsors/trip-advisor-001.jpg";
 import img4 from "../../Utilities/sponsors/trip-advisor-002.jpg";
+import "../PartnerSlider/PartnerSlider.css";
 class PartnerSlider extends Component {
   render() {
     const settings = {
@@ -24,16 +25,16 @@ class PartnerSlider extends Component {
           </div>
           <Slider ref={(slider) => (this.slider = slider)} {...settings}>
             <div>
-              <img src={img1} alt="" />
+              <img className="imgRes" src={img1} alt="" />
             </div>
             <div>
-              <img src={img2} alt="" />
+              <img className="imgRes" src={img2} alt="" />
             </div>
             <div>
-              <img src={img3} alt="" />
+              <img className="imgRes" src={img3} alt="" />
             </div>
             <div>
-              <img src={img4} alt="" />
+              <img className="imgRes" src={img4} alt="" />
             </div>
           </Slider>
         </div>

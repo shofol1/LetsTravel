@@ -4,3 +4,20 @@
   -moz-box-shadow: 9px 2px 14px -2px rgba(0, 0, 0, 0.75);
   transition: 0.5s;
 }
+.borderLeft {
+  border-left: 1px solid #ddd;
+}
+@media screen and (max-width: 480px) {
+  .text-res {
+    text-align: center;
+  }
+  .res {
+    text-align: justify;
+  }
+  .borderLeft {
+    border-left: none;
+  }
+  .cardRes {
+    margin: 0 auto;
+  }
+}

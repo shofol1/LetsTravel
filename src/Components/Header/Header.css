@@ -1,4 +1,10 @@
-.slider {
-  width: 100%;
-  height: 500px !important;
+.flexOffRes {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .flexOffRes {
+    display: block !important;
+  }
 }
