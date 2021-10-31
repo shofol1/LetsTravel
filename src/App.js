@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
-    <div>
+    <div className="appOverflow">
       <AuthProvider>
         <Router>
           <Header></Header>

@@ -14,7 +14,11 @@ const HeroSection = () => {
       <div>
         <Carousel controls={true} indicators={false} interval={3000}>
           <Carousel.Item className="drk">
-            <img className="d-block w-100 " src={slider1} alt="First slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={slider1}
+              alt="First slide"
+            />
             <Carousel.Caption className="ccd bgDark">
               <LightSpeed left>
                 <h3 className="fs-2">
@@ -24,7 +28,11 @@ const HeroSection = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className="drk">
-            <img className="d-block w-100" src={slider2} alt="Second slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={slider2}
+              alt="Second slide"
+            />
 
             <Carousel.Caption className="ccd bgDark">
               <Jello top>
@@ -35,7 +43,11 @@ const HeroSection = () => {
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item className="drk">
-            <img className="d-block w-100" src={slider3} alt="Third slide" />
+            <img
+              className="d-block w-100 img-fluid"
+              src={slider3}
+              alt="Third slide"
+            />
 
             <Carousel.Caption className="ccd bgDark">
               <Bounce left>
