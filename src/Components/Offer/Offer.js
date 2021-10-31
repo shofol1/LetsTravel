@@ -24,7 +24,7 @@ const Offer = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${id}`)
+    fetch(`https://chilling-ghoul-37442.herokuapp.com/services/${id}`)
       .then((res) => res.json())
       .then((data) => setSigleService(data));
   }, []);
@@ -46,7 +46,7 @@ const Offer = () => {
       email: email,
       status: status,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://chilling-ghoul-37442.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -80,14 +80,17 @@ const Offer = () => {
                 {" "}
                 <img
                   className="img-fluid w-75"
-                  src={sigleService.picture}
+                  src={sigleService?.picture}
                   alt=""
                 />{" "}
               </Card.Header>
               <Card.Body>
                 <Card.Title>{sigleService?.name}</Card.Title>
                 <Card.Text>{sigleService?.Duration}</Card.Text>
-                <Card.Text>{sigleService?.price}</Card.Text>
+                <Card.Text>
+                  {sigleService?.price}
+                  <span className="fw-bold">৳</span>
+                </Card.Text>
                 <Card.Text>
                   <span className="fw-bold">
                     {" "}

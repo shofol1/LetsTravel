@@ -12,7 +12,7 @@ const MyBookins = () => {
   const notify = () => toast.warn("Your booking is cancelled!");
 
   useEffect(() => {
-    fetch("http://localhost:5000/myOrders")
+    fetch("https://chilling-ghoul-37442.herokuapp.com/myOrders")
       .then((res) => res.json())
       .then((data) => setAllbooking(data));
   }, [allbooking]);
@@ -22,7 +22,7 @@ const MyBookins = () => {
   }, [allbooking]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myOrders/${id}`, {
+    fetch(`https://chilling-ghoul-37442.herokuapp.com/myOrders/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -65,15 +65,15 @@ const MyBookins = () => {
             <tbody>
               {myBooking.map((booking) => (
                 <tr>
-                  <td>{booking.service_id}</td>
-                  <td>{booking.name}</td>
-                  <td>{booking.contact}</td>
-                  <td>{booking.member}</td>
-                  <td>{booking.status}</td>
+                  <td>{booking?.service_id}</td>
+                  <td>{booking?.name}</td>
+                  <td>{booking?.contact}</td>
+                  <td>{booking?.member}</td>
+                  <td>{booking?.status}</td>
                   <td>
                     <button
                       className="btn btn-danger btn"
-                      onClick={() => handleDelete(booking._id)}
+                      onClick={() => handleDelete(booking?._id)}
                     >
                       Cancel booking
                     </button>

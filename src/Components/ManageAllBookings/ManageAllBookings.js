@@ -9,14 +9,14 @@ const ManageAllBookings = () => {
   const notify = () => toast.warn("Your booking is deleted!");
   const approved = () => toast.success("booking successfully approved!");
   useEffect(() => {
-    fetch("http://localhost:5000/myOrders")
+    fetch("https://chilling-ghoul-37442.herokuapp.com/myOrders")
       .then((res) => res.json())
       .then((data) => setAllService(data));
   }, [allService]);
 
   //Delete handle
   const handleAllDelete = (id) => {
-    fetch(`http://localhost:5000/myOrders/${id}`, {
+    fetch(`https://chilling-ghoul-37442.herokuapp.com/myOrders/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -32,7 +32,7 @@ const ManageAllBookings = () => {
       });
   };
   const handlePending = (id) => {
-    fetch(`http://localhost:5000/updateStatus/${id}`, {
+    fetch(`https://chilling-ghoul-37442.herokuapp.com/updateStatus/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -76,18 +76,18 @@ const ManageAllBookings = () => {
             <tbody>
               {allService.map((service) => (
                 <tr>
-                  <td>{service.service_id}</td>
-                  <td>{service.name}</td>
-                  <td>{service.email}</td>
-                  <td>{service.member}</td>
-                  <td>{service.address}</td>
-                  <td>{service.status}</td>
+                  <td>{service?.service_id}</td>
+                  <td>{service?.name}</td>
+                  <td>{service?.email}</td>
+                  <td>{service?.member}</td>
+                  <td>{service?.address}</td>
+                  <td>{service?.status}</td>
                   <td className="text-center">
                     <Row>
                       <Col md={4}>
                         <button
                           className="btn btn-danger"
-                          onClick={() => handleAllDelete(service._id)}
+                          onClick={() => handleAllDelete(service?._id)}
                         >
                           Delete
                         </button>
@@ -95,7 +95,7 @@ const ManageAllBookings = () => {
                       <Col md={8}>
                         <button
                           className="btn btn-success ms-1"
-                          onClick={() => handlePending(service._id)}
+                          onClick={() => handlePending(service?._id)}
                         >
                           approve
                         </button>

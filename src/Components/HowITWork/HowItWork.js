@@ -29,8 +29,7 @@ const HowItWork = () => {
                   <Card.Body>
                     <Card.Title>Booking</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      At first book your service.Then wait for the confirmation.
                     </Card.Text>
                   </Card.Body>
                 </div>
@@ -45,10 +44,10 @@ const HowItWork = () => {
               <div className="mt-auto mb-auto">
                 <Card.Img className="w-25 mx-auto" variant="top" src={img2} />
                 <Card.Body>
-                  <Card.Title>Get Your Airline Ticket</Card.Title>
+                  <Card.Title>Get Your Ticket</Card.Title>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    After confirmation we will send you your ticket through
+                    email and dont delete the email.
                   </Card.Text>
                 </Card.Body>
               </div>
@@ -65,8 +64,8 @@ const HowItWork = () => {
                   <Card.Body>
                     <Card.Title>Enjoy The Holidays</Card.Title>
                     <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      We will try our best to give you the best service and
+                      makes your hoiliday memorable
                     </Card.Text>
                   </Card.Body>
                 </div>
