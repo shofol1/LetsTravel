@@ -2,12 +2,12 @@
 
 
 #Features
-you can book service
-you can delete service
-you can manage service
-you can login with google account
-you can see your bookings
-mobile responsive
+  *you can book service
+  *you can delete service
+  *you can manage service
+  *you can login with google account
+  *you can see your bookings
+  *mobile responsive
 
 # Getting Started with Create React App
 
