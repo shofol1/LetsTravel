@@ -1,11 +1,14 @@
 #Live side Link: [LetsTravel](https://booking-site-login.web.app).
+
+
 #Features
-  -you can book service
-  -you can delete service
-  -you can manage service
-  -you can login with google account
-  -you can see your bookings
-  -mobile responsive
+you can book service
+you can delete service
+you can manage service
+you can login with google account
+you can see your bookings
+mobile responsive
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
