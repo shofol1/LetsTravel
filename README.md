@@ -8,6 +8,12 @@
   *you can login with google account
   *you can see your bookings
   *mobile responsive
+  
+  * Item 1
+* Item 2
+* Item 3
+  * Sub Item A
+  * Sub Item B
 
 # Getting Started with Create React App
 
