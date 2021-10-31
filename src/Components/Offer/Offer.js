@@ -57,7 +57,9 @@ const Offer = () => {
       .then((data) => {
         if (data.insertedId) {
           notify();
-          reset();
+          contactRef.current.value = "";
+          addressRef.current.value = "";
+          memberRef.current.value = "";
         }
       });
     e.preventDefault();

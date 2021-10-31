@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Card, Col, Container, Row, Spinner, Table } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../ManageAllBookings/MangageAllBookings.css";
@@ -7,7 +7,7 @@ import "../ManageAllBookings/MangageAllBookings.css";
 const ManageAllBookings = () => {
   const [allService, setAllService] = useState([]);
   const notify = () => toast.warn("Your booking is deleted!");
-  const approved = () => toast.warn("Your booking is approved!");
+  const approved = () => toast.success("booking successfully approved!");
   useEffect(() => {
     fetch("http://localhost:5000/myOrders")
       .then((res) => res.json())
@@ -68,38 +68,44 @@ const ManageAllBookings = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {allService.map((service) => (
-              <tr>
-                <td>{service.service_id}</td>
-                <td>{service.name}</td>
-                <td>{service.email}</td>
-                <td>{service.member}</td>
-                <td>{service.address}</td>
-                <td>{service.status}</td>
-                <td className="text-center">
-                  <Row>
-                    <Col md={4}>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => handleAllDelete(service._id)}
-                      >
-                        Delete
-                      </button>
-                    </Col>
-                    <Col md={8}>
-                      <button
-                        className="btn btn-success ms-1"
-                        onClick={() => handlePending(service._id)}
-                      >
-                        approve
-                      </button>
-                    </Col>
-                  </Row>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          {allService.length === 0 ? (
+            <div>
+              <Spinner animation="grow" variant="primary" />
+            </div>
+          ) : (
+            <tbody>
+              {allService.map((service) => (
+                <tr>
+                  <td>{service.service_id}</td>
+                  <td>{service.name}</td>
+                  <td>{service.email}</td>
+                  <td>{service.member}</td>
+                  <td>{service.address}</td>
+                  <td>{service.status}</td>
+                  <td className="text-center">
+                    <Row>
+                      <Col md={4}>
+                        <button
+                          className="btn btn-danger"
+                          onClick={() => handleAllDelete(service._id)}
+                        >
+                          Delete
+                        </button>
+                      </Col>
+                      <Col md={8}>
+                        <button
+                          className="btn btn-success ms-1"
+                          onClick={() => handlePending(service._id)}
+                        >
+                          approve
+                        </button>
+                      </Col>
+                    </Row>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          )}
         </Table>
       </Container>
     </div>

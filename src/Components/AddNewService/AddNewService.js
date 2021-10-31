@@ -44,7 +44,13 @@ const AddNewService = () => {
       .then((data) => {
         if (data.insertedId) {
           notify();
-          reset();
+          nameRef.current.value = " ";
+          emailRef.current.valu = " ";
+          phoneRef.current.value = " ";
+          DurationRef.current.value = " ";
+          priceRef.current.value = " ";
+          pictureRef.current.value = " ";
+          aboutRef.current.value = " ";
         }
       });
     e.preventDefault();
